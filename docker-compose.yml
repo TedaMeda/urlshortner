@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: urlshortener-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7.0
+    container_name: urlshortener-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:
